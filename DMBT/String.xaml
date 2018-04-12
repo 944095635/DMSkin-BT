@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:DMBT"
+                    xmlns:System ="clr-namespace:System;assembly=mscorlib">
+    <System:String x:Key="AppName">BT社区</System:String>
+    <FontFamily x:Key="MFYueYuan">/DMBT;component/Resources/#MF YueYuan (Noncommercial) Regular</FontFamily>
+    <FontFamily x:Key="微软雅黑">微软雅黑</FontFamily>
+    <FontFamily x:Key="宋体">宋体</FontFamily>
+    <FontFamily x:Key="黑体">黑体</FontFamily>
+    <FontFamily x:Key="AppFont4">微软雅黑</FontFamily>
+</ResourceDictionary>

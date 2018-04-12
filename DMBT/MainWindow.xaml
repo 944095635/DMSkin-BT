@@ -1,0 +1,73 @@
+﻿<Window x:Class="DMBT.MainWindow"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dm="clr-namespace:DMSkin.WPF.Controls;assembly=DMSkin.WPF"
+        xmlns:local="clr-namespace:DMBT.Forms"
+        mc:Ignorable="d"
+        FontFamily="{StaticResource MFYueYuan}"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Style="{StaticResource MainWindow}"
+        MinHeight="400" MinWidth="400"
+        Title="{StaticResource AppName}" Height="600" Width="800" ResizeMode="CanResizeWithGrip"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Background="{StaticResource DMMainColor}" Grid.Row="0" Name="DMTitle" MouseDown="DMTitle_MouseDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <TextBlock Foreground="White" Margin="10,0,0,0"  FontSize="30" Text="&#xe605;" FontFamily="/DMBT;component/Resources/#iconfont" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Text="{StaticResource AppName}" FontSize="20" FontWeight="Bold" Foreground="White" Margin="10,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </StackPanel>
+            <StackPanel Height="40" Orientation="Horizontal" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right">
+                <Button x:Name="PART_Min"
+                        Click="PART_Min_Click"
+                                Focusable="False"
+                                Style="{DynamicResource CaptionButtonStyle}"
+                                Padding="0"
+                                >
+                    <Path Data="F1M0,6L0,9 9,9 9,6 0,6z"
+                                  SnapsToDevicePixels="True"
+                                  Fill="{DynamicResource TabItemFontBrush}" />
+                </Button>
+                <Button x:Name="PART_Close"
+                                Focusable="False"
+                        Click="PART_Close_Click"
+                                Style="{DynamicResource CaptionButtonStyle}"
+                                Padding="0"
+                                >
+                    <Path Data="F1M0,0L2,0 5,3 8,0 10,0 6,4 10,8 8,8 5,5 2,8 0,8 4,4 0,0z"
+                                  SnapsToDevicePixels="True"
+                                  Fill="{DynamicResource TabItemFontBrush}" />
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid Name="MainCon" Grid.Row="1"  ClipToBounds="True" >
+            <TabControl Style="{StaticResource DMTopTabControl}" Name="MainTabControl"  BorderBrush="#FFE1E1E2">
+                <TabItem Style="{StaticResource DMTopTabItemLeft}"  Header="BT搜索"  IsSelected="True">
+                    <local:BTHome  BorderThickness="0,1,0,0" BorderBrush="{StaticResource TextColor2}" ></local:BTHome>
+                </TabItem>
+                <TabItem  Style="{StaticResource DMTopTabItem}"  Header="个人中心(未开放)">
+                </TabItem>
+                <TabItem  Style="{StaticResource DMTopTabItemRight}"  Header="设置">
+                    <local:FormSet  BorderThickness="0,1,0,0" BorderBrush="{StaticResource TextColor2}" ></local:FormSet>
+                </TabItem>
+            </TabControl>
+        </Grid>
+        <Grid Grid.Row="2" Background="#FFF6F6F8" >
+            <Border BorderThickness="0,1,0,0" BorderBrush="#FFE1E1E2"/>
+            <dm:DMButtonUnderline Name="btnOpenQQ" Click="btnOpenQQ_Click" HorizontalAlignment="Left" DMButtonUnderlineWidth="80">联系开发者</dm:DMButtonUnderline>
+            <TextBlock HorizontalAlignment="Right" Name="labVer" VerticalAlignment="Center" Margin="0,0,20,0">版本号:</TextBlock>
+        </Grid>
+    </Grid>
+</Window>
